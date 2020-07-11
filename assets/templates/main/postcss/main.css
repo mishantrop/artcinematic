@@ -1,3 +1,118 @@
+@custom-media --notebook (max-width: 1366px);
+@custom-media --desktop (max-width: 1200px);
+@custom-media --tablet-landscape (max-width: 1024px);
+@custom-media --tablet (max-width: 768px);
+@custom-media --mobile (max-width: 600px);
+@custom-media --extra-mobile (max-width: 480px);
+
+:root {
+  --color-main: #ec5c7d;
+  --color-second: #222;
+  --color-grey: #ddd;
+  --color-main-dark: #881a3c;
+  --padding-side: 20px;
+  --transition-length: 0.1s;
+  --font-main: 'Montserrat-Regular', 'Arial', 'Verdana', 'Tahoma';
+  --font-second: 'Montserrat-Regular', 'Arial', 'Verdana', 'Tahoma';
+}
+
+@define-mixin form-button {
+  align-items: center;
+  appearance: none;
+  background-color: #2641cc;
+  border-radius: 27px;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  outline: none;
+  overflow: hidden;
+  padding: 18px 40px;
+  position: relative;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: uppercase;
+  transition: background-color var(--transition-length) linear, color var(--transition-length) linear;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  @media (--mobile) {
+    font-size: 14px;
+  }
+
+  span {
+    pointer-events: none;
+    position: relative;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #881a3c;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+@define-mixin form-input {
+  background-color: #fff;
+  border: none;
+  color: #222;
+  display: block;
+  height: 40px;
+  line-height: 1;
+  padding: 0 20px;
+  width: 100%;
+
+  &[placeholder] {
+    text-overflow: ellipsis;
+  }
+
+  @media (--mobile) {
+    font-size: 12px;
+  }
+}
+
+@define-mixin form-textarea {
+  background-color: #fff;
+  border: none;
+  color: #222;
+  display: block;
+  min-height: 80px;
+  line-height: 1.5;
+  padding: 20px;
+  width: 100%;
+
+  &[placeholder] {
+    text-overflow: ellipsis;
+  }
+
+  @media (--mobile) {
+    font-size: 12px;
+  }
+}
+
+@define-mixin form-group {
+  margin: 0 0 20px;
+}
+
+@define-mixin form-messages {
+  padding: 1rem 0;
+  text-align: center;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      font-family: var(--font-main);
+      text-transform: uppercase;
+    }
+  }
+}
+
 @font-face {
   font-family: 'Montserrat-Regular';
   src: url('../fonts/Montserrat-Regular.eot');
@@ -27,6 +142,17 @@ body {
   margin: 0;
   overflow: hidden;
   padding: 0;
+
+  &-logo {
+    display: block;
+    left: 40px;
+    position: absolute;
+    text-decoration: none;
+    top: 20px;
+    z-index: 2;
+    width: 216px;
+    height: 68px;
+  }
 
   &-video {
     background-color: #4891cc;
@@ -90,7 +216,7 @@ nav .sidenav-trigger i {
   }
 }
 
-.index-textblock {
+.textblock {
   font-family: 'Montserrat-Regular';
   font-size: 25px;
   margin: 0;
@@ -173,6 +299,57 @@ nav .sidenav-trigger i {
       font-size: 1rem;
       padding: 0 0 0.5rem;
       text-transform: uppercase;
+    }
+  }
+}
+
+.feedback {
+  &__container {
+    margin: 0 auto;
+    max-width: 860px;
+  }
+
+  &__header {
+    color: #fff;
+    font-family: var(--font-second);
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 0 0 2rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  & .form-group {
+    @mixin form-group;
+
+    &__label {
+      display: block;
+      user-select: none;
+    }
+  }
+
+  &-messages,
+  &-loader,
+  &-errors {
+    @mixin form-messages;
+  }
+
+  &__input {
+    @mixin form-input;
+  }
+
+  &__textarea {
+    @mixin form-textarea;
+  }
+
+  &__submit {
+    @mixin form-button;
+
+    &-wrapper {
+      margin: 0 !important;
+      padding: 0;
+      text-align: center;
     }
   }
 }

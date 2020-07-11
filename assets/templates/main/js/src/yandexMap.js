@@ -39,7 +39,7 @@ export const initYandexMap = (mapId) => {
       {
         hintContent: 'Bunny Hop',
         balloonContent: title,
-        iconImageHref: '/assets/templates/main/images/yamap-ico.png',
+        // iconImageHref: '/assets/templates/main/images/yamap-ico.png',
       },
     );
     map.geoObjects.add(myPlacemark);

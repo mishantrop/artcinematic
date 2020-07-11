@@ -1,9 +1,9 @@
 // import { LuminousGallery } from 'luminous-lightbox';
 import { scrollTo } from './scrollto';
-// import Quasiform from 'quasiform';
+import Quasiform from 'quasiform';
 
 // import { initBackToTopScroll } from './backtotop';
-// import { initYandexMap } from './yandexMap';
+import { initYandexMap } from './yandexMap';
 // import { Modal } from './Modal';
 // import { Navigation } from './navigation';
 // import { initSuperButton } from './superbutton';
@@ -76,18 +76,17 @@ const init = () => {
   // initIndexTestimonialsSlider();
   // initIndexReservationSlider();
 
-  // if (document.querySelectorAll('#index-feedback__form-wrapper')) {
-  //   const feedbackForm = new Quasiform({
-  //     selector: '#index-feedback__form-wrapper',
-  //   });
-  // }
+  if (document.querySelectorAll('#index-feedback__form-wrapper')) {
+    const feedbackForm = new Quasiform({
+      selector: '#index-feedback__form-wrapper',
+    });
+  }
 
   // initSuperButton();
   // initIndexGalleryLightbox();
 
   // initLazyBackgrouns();
-  // initYandexMap('index-map-93', [55.780598, 37.715462], 'Москва, ул. Большая Семёновская, дом 42');
-  // initYandexMap('index-map-95', [55.8276949, 37.4485724], 'Москва, дом 24, БЦ «Смольный» 24, 3 этаж');
+  initYandexMap('index-map');
   // initModals();
 };
 
