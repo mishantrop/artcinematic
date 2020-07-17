@@ -1,0 +1,37 @@
+.superblock {
+  padding: 45px 0;
+
+  &--mb {
+    margin: 0 0 40px;
+  }
+
+  &--grey {
+    background-color: #ddd;
+  }
+
+  &__header {
+    font-size: 1.8rem;
+    margin: 0 0 30px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    user-select: none;
+
+    @media (--tablet) {
+      font-size: 1.3rem;
+    }
+
+    @media (--mobile) {
+      font-size: 1.2rem;
+    }
+
+    &::after {
+      background-color: #236ff9;
+      content: ' ';
+      display: block;
+      height: 2px;
+      margin: 20px auto 0;
+      width: 70px;
+    }
+  }
+}

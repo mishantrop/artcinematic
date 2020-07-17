@@ -1,0 +1,38 @@
+.footer {
+  background-color: #333;
+  color: #aaa;
+  padding: 20px 0;
+
+  a {
+    color: #aaa;
+  }
+
+  &__address {
+    margin: 0 0 1rem;
+    padding: 0;
+    text-align: left;
+
+    &-label {
+      color: #ddd;
+    }
+
+    &-value {
+      font-style: normal;
+      text-decoration: none;
+    }
+  }
+
+  &-copyright {
+    margin: 30px 0 0;
+    padding: 1rem 0;
+    user-select: none;
+
+    @media (--tablet) {
+      text-align: center;
+    }
+  }
+
+  & .row {
+    margin-bottom: 0;
+  }
+}

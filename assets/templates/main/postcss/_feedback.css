@@ -1,0 +1,56 @@
+.feedback {
+  &__container {
+    margin: 0 auto;
+    max-width: 860px;
+  }
+
+  &__header {
+    color: #fff;
+    font-family: var(--font-second);
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 0 0 2rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  & .form-group {
+    @mixin form-group;
+
+    &__label {
+      display: block;
+      user-select: none;
+    }
+  }
+
+  &-messages,
+  &-loader,
+  &-errors {
+    @mixin form-messages;
+  }
+
+  &__input {
+    @mixin form-input;
+  }
+
+  &__textarea {
+    @mixin form-textarea;
+  }
+
+  &__submit {
+    @mixin form-button;
+
+    &:hover,
+    &:focus {
+      background-color: #236ff9;
+      text-decoration: none;
+    }
+
+    &-wrapper {
+      margin: 0 !important;
+      padding: 0;
+      text-align: center;
+    }
+  }
+}

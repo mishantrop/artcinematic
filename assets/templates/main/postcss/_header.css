@@ -1,0 +1,54 @@
+.header {
+  background-color: #fff;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+
+  @media (--tablet-landscape) {
+    .container {
+      padding: 0;
+      width: 100%;
+    }
+  }
+
+  &-logo {
+    display: block;
+    left: 40px;
+    position: absolute;
+    text-decoration: none;
+    top: 20px;
+    z-index: 3;
+    width: 216px;
+    height: 68px;
+
+    &--light {
+      @media (--mobile) {
+        display: none;
+      }
+    }
+
+    &--dark {
+      display: none;
+
+      @media (--mobile) {
+        display: block;
+        margin: 10px auto;
+        position: unset;
+      }
+    }
+  }
+
+  &-video {
+    background-color: #4891cc;
+    display: block;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+  }
+}
+
+.header-video-back {
+  display: none;
+  position: relative;
+  top: 0;
+}

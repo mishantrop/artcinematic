@@ -1,0 +1,89 @@
+@define-mixin form-button {
+  align-items: center;
+  appearance: none;
+  background-color: var(--color-main);
+  border-radius: 30px;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  outline: none;
+  overflow: hidden;
+  padding: 18px 40px;
+  position: relative;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: uppercase;
+  transition: background-color var(--transition-length) linear, color var(--transition-length) linear;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  @media (--mobile) {
+    font-size: 14px;
+  }
+
+  span {
+    pointer-events: none;
+    position: relative;
+  }
+}
+
+@define-mixin form-input {
+  background-color: #fff;
+  border: none;
+  color: #222;
+  display: block;
+  height: 40px;
+  line-height: 1;
+  padding: 0 20px;
+  width: 100%;
+
+  &[placeholder] {
+    text-overflow: ellipsis;
+  }
+
+  @media (--mobile) {
+    font-size: 12px;
+  }
+}
+
+@define-mixin form-textarea {
+  background-color: #fff;
+  border: none;
+  color: #222;
+  display: block;
+  min-height: 80px;
+  line-height: 1.5;
+  padding: 20px;
+  width: 100%;
+
+  &[placeholder] {
+    text-overflow: ellipsis;
+  }
+
+  @media (--mobile) {
+    font-size: 12px;
+  }
+}
+
+@define-mixin form-group {
+  margin: 0 0 20px;
+}
+
+@define-mixin form-messages {
+  padding: 1rem 0;
+  text-align: center;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      font-family: var(--font-main);
+      text-transform: uppercase;
+    }
+  }
+}

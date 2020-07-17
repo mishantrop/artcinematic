@@ -1,0 +1,46 @@
+nav.first ul a,
+.main__submenu a {
+  color: #999;
+  text-transform: uppercase;
+}
+
+nav.first video {
+  height: 874px;
+  position: absolute;
+  z-index: -1;
+}
+
+nav .sidenav-trigger {
+  float: none;
+  margin: 0;
+  position: relative;
+}
+
+nav .sidenav-trigger i {
+  margin-left: 20px;
+}
+
+.navigation {
+  position: absolute;
+  right: 40px;
+  top: 20px;
+  z-index: 2;
+
+  .top-menu {
+    padding: 0;
+
+    li {
+      list-style-type: none;
+    }
+
+    a {
+      color: #fff;
+      font-size: 1.2rem;
+      user-select: none;
+
+      &:hover {
+        color: #cdd5dc;
+      }
+    }
+  }
+}
