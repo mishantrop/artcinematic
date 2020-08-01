@@ -7,12 +7,17 @@
     }
 
     &__image {
-      background-color: #ddd;
+      background-color: #a4c3c1;
       border-radius: 50%;
       height: 140px;
       margin: 0 auto 2rem;
-      padding: 20px;
+      padding: 0;
       width: 140px;
+
+      & > svg {
+        width: 140px;
+        height: 140px;
+      }
     }
 
     &__header {
